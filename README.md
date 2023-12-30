@@ -7,7 +7,7 @@ Krwlr is a web page parsing tool that retrieves URLs from web pages based on a g
 - Lists the nested urls belonging to same domain.
 - Retries if timeout
 
-## TODO
+## Todo
 - Dynamically retry with exponental time-out
 - configure parallel parsers and timeout via paramers
 
