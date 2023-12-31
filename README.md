@@ -20,7 +20,7 @@ To use Krwlr, you must have Go installed on your system. Follow the steps below:
 3. Open a terminal and navigate to the project directory.
 4. Run go build 
 5. Update path to include the binary
-6. use ```krwlr --url "https://example.com" --depth 2```
+6. use ```crawler --url "https://example.com" --depth 2```
 
 
 ## Architecture
