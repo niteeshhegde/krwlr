@@ -63,7 +63,8 @@ func CrawlWebpage(rootURL string, maxDepth int) ([]string, error) {
 		}
 	}()
 
-	// running parallel workers to receive links from already parsed web pages. This may not be needed if the load is not high as we fetch the web page in a separate go routine.
+	// running parallel workers to receive links from already parsed web pages. This may be needed if the load is high while parsing and we do additional operations like while scrapting ecommerce sites
+	// NOTE: Parallel processors is not really necessary here as we fetch only the links and may lead to unncessary contention on the mapMutex. But, added this to show the ability to run parallel workers
 	for i := 0; i < constant.ParallelWorkerCount; i++ {
 		go func() {
 			for link := range linksChan {
