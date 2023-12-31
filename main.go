@@ -189,6 +189,8 @@ func parseLinks(n *html.Node, depth int, linkChan chan Link, wg *sync.WaitGroup)
 	// parsing the html document for <a href=""> tags
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, attr := range n.Attr {
+			// TODO: need to handle relative urls like ../mypath, handle absolute urls like http://mysite.com/mypath
+			// TODO: pass the parent url to the child urls to handle relative urls
 			if attr.Key == "href" && attr.Val != "" && attr.Val[0] == '/' {
 				wg.Add(1)
 				linkChan <- Link{URL: attr.Val, Depth: depth}
