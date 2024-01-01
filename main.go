@@ -28,13 +28,13 @@ type Link struct {
 
 func CrawlWebpage(rootURL string, maxDepth int) ([]string, error) {
 	var (
+		links     = make([]string, 0)
+		visited   = make(map[string]bool)
+		mapMutex  = sync.RWMutex{}
 		wg        sync.WaitGroup
 		linksChan = make(chan Link, 5)
 		errorChan = make(chan error, 0)
-		links     = make([]string, 0)
 		err       error
-		visited   = make(map[string]bool)
-		mapMutex  = sync.RWMutex{}
 	)
 
 	// validating the input parameters

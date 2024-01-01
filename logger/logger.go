@@ -2,10 +2,12 @@ package logger
 
 import "fmt"
 
-var colorReset string = "\033[0m"
-var colorRed string = "\033[31m"
-var colorGreen string = "\033[32m"
-var colorYellow string = "\033[33m"
+const (
+	colorReset  string = "\033[0m"
+	colorRed    string = "\033[31m"
+	colorGreen  string = "\033[32m"
+	colorYellow string = "\033[33m"
+)
 
 func LogWarn(str ...any) {
 	fmt.Println(string(colorYellow), str, string(colorReset))
