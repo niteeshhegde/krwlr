@@ -10,7 +10,7 @@ const (
 )
 
 func LogWarn(str ...any) {
-	fmt.Println(string(colorYellow), str, string(colorReset))
+	fmt.Println(colorYellow, str, colorReset)
 }
 
 func LogError(str ...any) {
@@ -18,5 +18,5 @@ func LogError(str ...any) {
 }
 
 func LogInfo(str ...any) {
-	fmt.Println(string(colorGreen), str, string(colorReset))
+	fmt.Println(colorGreen, str, colorReset)
 }
