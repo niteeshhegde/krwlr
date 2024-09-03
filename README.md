@@ -1,6 +1,6 @@
 # Krwlr
 
-Krwlr is a web page parsing tool that retrieves URLs from web pages based on a given URL and depth parameter.
+Krwlr is a web page parsing tool that retrieves URLs from web pages based on a given URL and depth parameter. 
 
 ## Features
 
